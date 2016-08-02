@@ -1,12 +1,14 @@
 package services
 
+import play.api.libs.json.JsValue
+import play.api.libs.ws.WSResponse
+
 import scala.concurrent.Future
-import scala.util.parsing.json.JSONObject
 
 trait SearchService {
 
-  def save(jsonObject: JSONObject): Future[Result]
+  def save(json: JsValue): Future[WSResponse]
 
-  def list: Future[Result]
+  def list: Future[WSResponse]
 
 }
